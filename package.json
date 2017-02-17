@@ -1,0 +1,24 @@
+{
+  "name":        "random-country",
+  "version":     "1.0.0",
+  "description": "Ask Alexa for the name of a random country",
+  "main":        "app/app.js",
+  "engines": {
+    "node":      "6.2.1"
+  },
+  "repository": {
+    "type":      "git",
+    "url":       "git+https://github.com/keithpjolley/randomcountry.git"
+  },
+  "author":      "Keith P Jolley",
+  "license":     "MIT",
+  "homepage":    "https://randomcountry.jamulheavyindustries.com/index.html",
+  "help":        "https://randomcountry.jamulheavyindustries.com/help.html",
+  "dependencies": {
+    "express":        "^4.14.0",
+    "body-parser":    "^1.15.2",
+    "alexa-verifier": "0.0.5",
+    "serve-favicon":  "~2.3.0",
+    "pug":            "2.0.0-beta11"
+  }
+}

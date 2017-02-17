@@ -1,0 +1,25 @@
+{
+  "session": {
+    "sessionId": "SessionId.096f540a-b188-4639-94c1-047e152476e9",
+    "application": {
+      "applicationId": "amzn1.ask.skill.c6a162e1-2136-4fdb-aa4e-ea280fd08275"
+    },
+    "attributes": {},
+    "user": {
+      "userId":
+"amzn1.ask.account.AF7YQG47ARFP3NH4X2DUPSQFPEG7JDGT4UT4FGDZ7PUHLWC5OIFQP45CVLUXHIY22O4VCXK2DYS5PFGKLCM6RGJAQIPTJ4MQJTVQWJPSIFKPRMR6NVT6KQZXC4RKCGWWLVILKHLB7QUPBMZMPDI62PSQHGDCQQAHZAKNZ4L7ECGMAHEWRBHVXP5OXZSK2MCV77QJZQWBPXLCPDI"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.70a0c5ab-da8b-40a0-82d4-6c7b3561a722",
+    "locale": "en-US",
+    "timestamp": "2017-02-15T20:04:37Z",
+    "intent": {
+      "name": "RandomCountry",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

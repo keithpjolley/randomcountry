@@ -1,0 +1,9 @@
+POST /forecast HTTP/1.1
+Content-Type : application/json;charset=UTF-8
+Host : __HOST__
+Content-Length : __BODYBYTES__
+Accept : application/json
+Accept-Charset : utf-8
+Signature:  sig
+SignatureCertChainUrl: https://s3.amazonaws.com/echo.api/echo-api-cert.pem
+

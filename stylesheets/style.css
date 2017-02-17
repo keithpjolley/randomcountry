@@ -1,0 +1,145 @@
+/* fof: 404 (Four-Oh-Four) */
+body.fof, body.error, body.kind_404 {
+  background-color: #da1;
+  background-image: url("/images/radio.jpg");
+  text-align:       center;
+}
+
+h1.fof, h1.error {
+  background-color: #da1;
+  color:            #000;
+  right:            247px;
+  top:              20px;
+  font-family:      "P22 Typewriter", "Lucida Console", Monaco, monospace;
+  font-size:        48px;
+}
+
+h2.fof, h2.error {
+  background-color: #da1;
+  color:            #000;
+  top:              10px;
+  font-family:      "P22 Typewriter", "Lucida Console", Monaco, monospace;
+  font-size:        24px;
+}
+
+div.kind_404, div.kind_error {
+}
+
+div.fof_youtube, div.error_youtube {
+  width:            100%;
+  height:           auto;
+  position:         relative;
+}
+
+iframe.fof, iframe.fof {
+  margin:           0;
+  position:         relative;
+  border-width:     20px;
+  border-style:     solid;
+  border-color:     #ff1;
+}
+
+img.fof, img.error {
+  position:         absolute;
+  right:            24px;
+  bottom:           24px;
+  z-index:          -1;
+}
+
+/* fox: 50x (Five-Oh-X) */
+body.fox, body.kind_50x {
+  background-color: #e76;
+  background-image: url("/images/dang.jpg");
+  font-family:      "P22 Typewriter", "Lucida Console", Monaco, monospace;
+  color:            #000;
+}
+
+div.fox {
+  display:          inline-block;
+  /*background-color: #45b;*/
+  background-color: rgba(64, 80, 192, 0.5);;
+  border-color:     #b33;
+  border-width:     5px;
+  border-style:     solid;
+  bottom:           20px;
+  position:         absolute;
+  margin:           5px;
+}
+
+h1.fox {
+  background-color: rgba(224, 112, 96, 0.75);;
+  width:            25%;
+  left:             66%;
+  color:            #000;
+  font-size:        36px;
+  text-align:       right;
+  padding:          12px;
+  position:         relative;
+}
+
+h2.fox {
+  background-color: rgba(224, 112, 96, 0.75);;
+  font-size:        24px;
+  text-align:       right;
+  position:         relative;
+  padding:          12px;
+}
+
+/* fot: 403 (Four-Oh-Three) */
+body.fot {
+  background-color: #f9f;
+  background-image: url("/images/unicorn.jpg");
+  text-align:       center;
+}
+
+h1.fot {
+  background-color: rgba(255, 144, 255, 0.75);;
+  color:            #000;
+  right:            247px;
+  top:              20px;
+  font-family:      "P22 Typewriter", "Lucida Console", Monaco, monospace;
+  font-size:        48px;
+}
+
+h2.fot {
+  background-color: rgba(255, 144, 255, 0.75);;
+  color:            #000;
+  top:              10px;
+  font-family:      "P22 Typewriter", "Lucida Console", Monaco, monospace;
+  font-size:        24px;
+}
+
+div.fot_youtube {
+  width:            100%;
+  height:           auto;
+  position:         relative;
+}
+
+iframe.fot {
+  margin:           0;
+  position:         relative;
+  border-width:     20px;
+  border-style:     solid;
+  border-color:     #ff1;
+}
+
+img.fot {
+  position:         absolute;
+  right:            24px;
+  bottom:           24px;
+  z-index:          -1;
+}
+
+/* html: basic html formating for randomcountry */
+body {
+  background-color: #001;
+  color:            #ee1;
+}
+
+a:visited {
+  color:            #cc1;
+}
+
+a:link {
+  color:            #aa0;
+}
