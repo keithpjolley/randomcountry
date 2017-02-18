@@ -1,6 +1,6 @@
 'use strict';
 
-let verifier = require('alexa-verifier');
+var verifier = require('alexa-verifier');
 
 module.exports = function(req, res, next) {
     if (process.env.NODE_ENV === 'development') {

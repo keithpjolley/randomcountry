@@ -1,13 +1,13 @@
 'use strict';
 
-let express    = require('express'),
+var express    = require('express'),
     bodyParser = require('body-parser'),
     verify     = require('./verify'),
     favicon    = require('serve-favicon'),
     path       = require('path'),
     randomcountry = require('./randomcountry');
 
-let app = express();
+var app = express();
 
 app.use(favicon(path.join(__dirname, '../images', 'favicon.png')));
 app.set('views', path.join(__dirname, '../views'));

@@ -6,9 +6,9 @@
 //
 'use strict';
 
-const VERSION = '1.0';
+var VERSION = '1.0';
 
-let request = require('request');
+var request = require('request');
 
 // called when someone wants a randomcountry
 // there are a couple ways this is done.
@@ -27,7 +27,7 @@ module.exports = function(req, res, what) {
   // or two flavors of json - minimal or alexafied
   } else if (Object.keys(req.body).length == 0) {
     var rc = getRandomCountry();
-    console.log('responding to random country GET with:', rc.randomcountry, ',  what: ', what);
+    console.log('responding to random country GET with:', rc.title, ',  what: ', what);
     // html output
     if(what === "html") {
       res.render("html", rc)
@@ -35,37 +35,49 @@ module.exports = function(req, res, what) {
     // minimal json out
     } else if(what === "json") {
       res.json({
-        "randomcountry": rc.randomcountry,
-        "flag": rc.card.image.smallImageUrl,
+        "randomcountry": rc.title,
+        "flag": rc.image.smallImageUrl,
         "author": "Keith P. Jolley",
         "source": "https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags"
       });
 
     // alexa output, but not to alexa
     } else {
-      res.json( buildResponse( {}, '<speak>I give you ' + rc.randomcountry + '</speak>', rc.card, true ));
+      res.json( buildResponse( {}, '<speak>How about, ' + rc.title + '?</speak>', rc, true ));
+
     }
-  } else if (
-      (req.body.request.type === 'LaunchRequest')
-    ||
-      ((req.body.request.type === 'IntentRequest') && (req.body.request.intent.name === 'RandomCountry')))
+  } else if ((req.body.request.type === 'LaunchRequest')
+          ||
+            ((req.body.request.type === 'IntentRequest') && (req.body.request.intent.name === 'RandomCountry')))
   {
     // this is from a generic "POST" or a specific request from alexa. hit and quit.
     var rc = getRandomCountry();
     console.log('responding to random country POST with:', rc.randomcountry);
-    res.json( buildResponse( {}, '<speak> I give you ' + rc.randomcountry + '</speak>', rc.card, true ));
-  } else if (req.body.request.type === 'SessionEndedRequest') {
-    // not sure what this is.
-    if (req.body.request.reason === 'ERROR') {
-      console.error('Alexa ended the session due to an error.  3');
+    var randnum = Math.random();
+    if (randnum<1/3) {
+      res.json( buildResponse( {}, "<speak>I give you, " + rc.title + '</speak>', rc, true ));
+    } else if (randnum<2/3) {
+      res.json( buildResponse( {}, "<speak>How about, " + rc.title + '?</speak>', rc, true ));
+    } else {
+      res.json( buildResponse( {}, "<speak>Let's say,, " + rc.title + '</speak>', rc, true ));
     }
+  } else if ((req.body.request.type === 'IntentRequest')) {
+    console.log('unknown IntentRequest:');
+    res.json( buildResponse( {}, '<speak>' + "I'm not sure how we got here." + '</speak>', {}, true ));
+  } else if ((req.body.request.type === 'CancelIntent')) {
+    console.log('CancelIntent:');
+    res.json( buildResponse( {}, '<speak>' + "Whatever" + '</speak>', {}, true ));
+  } else if ((req.body.request.type === 'HelpIntent')) {
+    console.log('HelpIntent:');
+    res.json( buildResponse( {}, '<speak>' + "Simple. You ask me for a random country, I give you a random country." + '</speak>', {}, true ));
+  } else if (req.body.request.reason === 'ERROR') {
+      console.error('Alexa ended the session due to an error.  3');
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      Per Alexa docs, we shouldn't send ANY response here... weird, I know.
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
   } else {
-    // asking for something i'm not knowing how to deal with
-    console.error('Intent not implemented: ', req.body);
-    response.status(504).json({ message: 'Intent Not Implemented' });
+    console.log('ELSE:');
+    res.json( buildResponse( {}, '<speak>' + "Goodbye." + '</speak>', {}, true ));
   }
 }
 
@@ -83,7 +95,7 @@ function getRandomCountry () {
                   largeImageUrl: flag
               }
           };
-  return( { randomcountry, card } );
+  return( card );
 }
 
 // what alexa wants, alexa gets
