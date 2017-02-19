@@ -6,10 +6,10 @@
 #
 me=$( basename "${0}" | tr -d "2" )
 
-#host="127.0.0.1"
-#port="8889"
-host="randomcountry.jamulheavyindustries.com"
-port="https"
+host="127.0.0.1"
+port="8889"
+#host="randomcountry.jamulheavyindustries.com"
+#port="https"
 post="alexa"
 
 #tomorrow="$(echo "$(date -j -f "%a %b %d %T %Z %Y" "$(date)" "+%s") + 24*60*60"|bc)"

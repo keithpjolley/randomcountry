@@ -6,10 +6,10 @@
 #
 me=$( basename "${0}" )
 
-#host="127.0.0.1"
-#port="8889"
-host="randomcountry.jamulheavyindustries.com"
-port="https"
+host="127.0.0.1"
+port="8889"
+#host="randomcountry.jamulheavyindustries.com"
+#port="https"
 
 dir=$( dirname "${0}" )
 head="${dir}/${me}.head"
