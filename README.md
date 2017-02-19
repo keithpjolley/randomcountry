@@ -4,38 +4,47 @@ Based on Alexa Weather Forecaster, as demo to show how to create
 an [Amazon Alexa (Echo)
 Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit).
 
-## Why
-I had no problem creating a working Alexa skill. All I did was
-extend my existing "Random Country" node script. My first iteration
-of "Random Country" already had an API (fancy terminology for "it
-returned JSON or HTML") so all I had to do is extend the json output
-into something Alexa could use, create the skill with a few phrases,
-and voila!, it worked.
+## what
+This project is a node service that returns, through html/http/alexa,
+the name of a random country from a static list of countries originally
+from
+<a href="https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags">
+Wikipedia</a>. The first iteration did a pull from 
+<a href="http://country.io/data/">country.io</a> but I liked having the
+flags and the simplicity of a static list. The downside is that pulling
+the data from the other site was cool and put the burden of keeping 
+the data up to date on someone else. I don't assume that this list is
+authoritative or the best, but they do have a flag. :)
 
-However, Amazon wouldn't certify it because they said it wasn't
-secure because API requests could come from anywhere, not just from
-Amazon. I really didn't care because the API was already open to
-anyone anyways.  But, I do want to have it certified so I had to
-include checking certs are valid. I'm a big fan of copying other
-people's code whenever possible but all of Amazon's examples pushed
-you towards using Lambda where that step is done for you. Lamda is
-super cool but I didn't want to have yet another service to manage
-so I just wanted to run in node on a host with all my other stuff.
-
-To make things more difficult the Alexa Skill self-service testing
-doesn't bother testing for valid certs.
 
 ## how
 ```
-% cd somewhere
-% git clone git@github.com:keithpjolley/randomcountry.git <or whatever>
+% git clone
 % cd randomcountry
 % npm install
 % node .
+% test/test2.sh
 % curl http://localhost:8889/[index.html|index.json|alexa]
 ```
 
-I've submitted to the Alexa gods and will report back what they say
-and keep iterating until it is accepted.
+## why
+An interesting side note (to me). The genesis of this project is
+that I was noodling on how to migrate an existing project to
+javascript. I was screenscraping using python/beautifulsoup, and
+wished that there was an API for the data I needed. I was also
+working on getting an object from an object of objects when my
+daughter walked in and said "Dad! What's the name of a random
+country?! Hurry!".
+
+I got the first version online, using express, when I saw that
+Amazon was giving away hoodies for new Alexa skills. We have an
+Alexa so this seemed like a perfect opportunity.
+
+I originally made a generic node express web page with html and
+json output, then extended it to serve Alexa, however, no security
+meant it couldn't pass Amazon's certification process.  When I added
+security the code became ugly so I rewrote from the Weather Forecaster
+base code. I'm not sure why verifying the POST is coming from Alexa
+isn't optional.
 
 ### keith
