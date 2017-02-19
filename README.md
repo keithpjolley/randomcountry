@@ -43,8 +43,8 @@ Alexa so this seemed like a perfect opportunity.
 I originally made a generic node express web page with html and
 json output, then extended it to serve Alexa, however, no security
 meant it couldn't pass Amazon's certification process.  When I added
-security the code became ugly so I rewrote from the Weather Forecaster
-base code. I'm not sure why verifying the POST is coming from Alexa
-isn't optional.
+security the code became so ugly I rewrote from the Weather Forecaster
+base code. It seems verifying the POST is coming from Alexa could
+be optional - no state secrets in this particular skill.
 
 ### keith
