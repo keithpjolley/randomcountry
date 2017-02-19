@@ -26,10 +26,16 @@ To make things more difficult the Alexa Skill self-service testing
 doesn't bother testing for valid certs.
 
 # how
-Download this repo. 
 ```
-% cd repo
+% cd somewhere
+% git clone git@github.com:keithpjolley/randomcountry.git <or whatever>
+% cd randomcountry
 % npm install
 % node .
 % curl http://localhost:8889/[index.html|index.json|alexa]
 ```
+
+I've submitted to the Alexa gods and will report back what they say
+and keep iterating until it is accepted.
+
+# keith
