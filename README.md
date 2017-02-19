@@ -25,7 +25,7 @@ so I just wanted to run in node on a host with all my other stuff.
 To make things more difficult the Alexa Skill self-service testing
 doesn't bother testing for valid certs.
 
-# how
+## how
 ```
 % cd somewhere
 % git clone git@github.com:keithpjolley/randomcountry.git <or whatever>
@@ -38,4 +38,4 @@ doesn't bother testing for valid certs.
 I've submitted to the Alexa gods and will report back what they say
 and keep iterating until it is accepted.
 
-# keith
+### keith
