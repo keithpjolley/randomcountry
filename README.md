@@ -30,7 +30,7 @@ authoritative or the best, but they do have a flag. :)
 ## why
 An interesting side note (to me). The genesis of this project is
 that I was noodling on how to migrate an existing project to
-javascript. I was screenscraping using python/beautifulsoup, and
+javascript. I was screenscraping using python/beautifulsoup and
 wished that there was an API for the data I needed. I was also
 working on getting an object from an object of objects when my
 daughter walked in and said "Dad! What's the name of a random
