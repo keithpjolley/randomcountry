@@ -48,7 +48,5 @@ base code. It seems verifying the POST is coming from Alexa could
 be optional - no state secrets in this particular skill.
 
 ### keith
-<pre>
-© 2017 -- Jamul Heavy Industries, LLC
+© 2017 -- Jamul Heavy Industries, LLC<br/>
 MIT License
-<pre>
