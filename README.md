@@ -8,9 +8,9 @@ Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit).
 This project is a node service that returns, through html/http/alexa,
 the name of a random country from a static list of countries originally
 from
-<a href="https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags">
-Wikipedia</a>. The first iteration did a pull from 
-<a href="http://country.io/data/">country.io</a> but I liked having the
+[https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags](Wikipedia).
+The first iteration did a pull from 
+[http://country.io/data/](country.io) but I liked having the
 flags and the simplicity of a static list. The downside is that pulling
 the data from the other site was cool and put the burden of keeping 
 the data up to date on someone else. I don't assume that this list is
@@ -18,13 +18,22 @@ authoritative or the best, but they do have a flag. :)
 
 
 ## how
+
+Install [node](https://nodejs.org/en/download/)
+Install [npm](https://docs.npmjs.com/cli/install)
+
 ```
 % git clone
 % cd randomcountry
 % npm install
-% node .
+% npm start
 % test/test2.sh
-% curl http://localhost:8889/[index.html|index.json|alexa]
+% echo "The following should all look 'reasonable'."
+% for i in index.html index.json alexa help.html
+do
+  echo ">>> $i ----------------------------------------"
+  curl "http://localhost:8889/${i}"
+done
 ```
 
 ## why
@@ -34,7 +43,7 @@ javascript. I was screenscraping using python/beautifulsoup and
 wished that there was an API for the data I needed. I was also
 working on getting an object from an object of objects when my
 daughter walked in and said "Dad! What's the name of a random
-country?! Hurry!".
+country?! Hurry!!".
 
 I got the first version online, using express, when I saw that
 Amazon was giving away hoodies for new Alexa skills. We have an
@@ -49,4 +58,5 @@ be optional - no state secrets in this particular skill.
 
 ### keith
 © 2017 -- Jamul Heavy Industries, LLC<br/>
+Jamul, CA
 MIT License

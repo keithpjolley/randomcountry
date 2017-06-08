@@ -2,7 +2,7 @@
   "name":        "random-country",
   "version":     "1.0.0",
   "description": "Ask Alexa for the name of a random country",
-  "main":        "app/app.js",
+  "main":        "app.js",
   "engines": {
     "node":      "6.2.1"
   },
@@ -20,5 +20,8 @@
     "alexa-verifier": "0.0.5",
     "serve-favicon":  "~2.3.0",
     "pug":            "2.0.0-beta11"
+  },
+  "scripts": {
+      "start": "node app.js"
   }
 }
