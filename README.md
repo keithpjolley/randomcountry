@@ -19,8 +19,8 @@ authoritative or the best, but they do have a flag. :)
 
 ## how
 
-Install [node](https://nodejs.org/en/download/)
-Install [npm](https://docs.npmjs.com/cli/install)
+- [ ] Install [node](https://nodejs.org/en/download/).
+- [ ] Install [npm](https://docs.npmjs.com/cli/install).
 
 ```
 % git clone

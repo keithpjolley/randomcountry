@@ -5,8 +5,8 @@ var path          = require('path');
 var favicon       = require('serve-favicon');
 var bodyParser    = require('body-parser');
 
-var verify        = require(path.join(__dirname, 'app', 'verify.js'));
-var randomcountry = require(path.join(__dirname, 'app', 'randomcountry.js'));
+var verify        = require(path.join(__dirname, 'include', 'verify.js'));
+var randomcountry = require(path.join(__dirname, 'include', 'randomcountry.js'));
 
 var app = express();
 
